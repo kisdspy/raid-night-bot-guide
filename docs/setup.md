@@ -14,17 +14,24 @@
 
 ## Установка
 
-1. Включите ADB в эмуляторе: Settings → Advanced → Android Debug Bridge.
+1. **Установите Android-эмулятор** и Raid в нём. Бот работает с Android-версией игры через ADB;
+   ПК-версия Raid (Plarium Play) не подойдёт.
+   - Mac на Apple Silicon (M1–M4): [BlueStacks Air](https://www.bluestacks.com/mac).
+   - Windows: [BlueStacks 5](https://www.bluestacks.com), LDPlayer или MuMu.
+
+   В эмуляторе войдите в Google Play, установите Raid: Shadow Legends, войдите в свой аккаунт игры
+   и переключите язык игры на английский.
+2. Включите ADB в эмуляторе: Settings → Advanced → Android Debug Bridge.
    У BlueStacks Air он на `127.0.0.1:5555`.
-2. Поставьте adb (`brew install android-platform-tools`) и проверьте:
+3. Поставьте adb (`brew install android-platform-tools`) и проверьте:
    `adb connect 127.0.0.1:5555 && adb devices`.
-3. Создайте окружение: `python3 -m venv .venv && .venv/bin/pip install opencv-python numpy pillow ocrmac`.
+4. Создайте окружение: `python3 -m venv .venv && .venv/bin/pip install opencv-python numpy pillow ocrmac`.
    На Windows вместо `ocrmac` поставьте `easyocr`.
-4. Игра должна быть на **английском** и в ландшафтной ориентации: все OCR-правила написаны под английские слова.
-5. Экран устройства у меня 1920x1080, но бот всегда уменьшает скриншот до **1280x720**
+5. Игра должна быть на **английском** и в ландшафтной ориентации: все OCR-правила написаны под английские слова.
+6. Экран устройства у меня 1920x1080, но бот всегда уменьшает скриншот до **1280x720**
    и работает в этих координатах, а тап пересчитывает обратно. Так все шаблоны и координаты
    живут в одной системе.
-6. Пакет Raid на Android: `com.plarium.raidlegends`. Запуск:
+7. Пакет Raid на Android: `com.plarium.raidlegends`. Запуск:
    `adb shell monkey -p com.plarium.raidlegends -c android.intent.category.LAUNCHER 1`.
 
 ## Шаблоны

@@ -26,6 +26,16 @@ Claude Code, Cursor, Codex) и попросите собрать такой же
 
 Около 4500 строк Python. Я собрал его примерно за 2,5 недели вместе с Claude Code.
 
+## Что понадобится
+
+- **Android-эмулятор** с установленной Android-версией Raid (ПК-версия не подойдёт):
+  BlueStacks Air на Mac (Apple Silicon), BlueStacks 5 / LDPlayer / MuMu на Windows.
+- Игра на английском языке, включённый ADB в эмуляторе.
+- Python 3 и adb (Android platform-tools).
+- Компьютер, который не засыпает ночью (на зарядке).
+
+Подробно — в [docs/setup.md](docs/setup.md).
+
 ## Как пользоваться
 
 1. Скормите LLM весь репозиторий: этот README и папку `docs/`. Папка `examples/` — точка старта для кода.
